@@ -21,14 +21,29 @@ export default function HeroSection() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
+          ><motion.div 
+            initial={{ scale: 0 }}
+            animate={{ scale: 1 }}
+            transition={{ type: "spring", stiffness: 260, damping: 20 }}
+            className="relative w-32 h-32 md:w-40 md:h-40 mx-auto mb-8"
           >
+            <div className="w-full h-full rounded-full overflow-hidden border-4 border-white/10 shadow-2xl glass">
+              <img 
+                src="/profil.jpg"
+                alt="Foto Profil" 
+                className="w-full h-full object-cover"
+              />
+            </div>
+            {/* Indikator Online Hijau */}
+            <div className="absolute bottom-2 right-2 w-6 h-6 bg-emerald-500 border-4 border-background rounded-full shadow-lg"></div>
+          </motion.div>
             <motion.span 
               className="inline-block px-4 py-2 rounded-full glass text-sm font-medium text-primary mb-6"
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.2 }}
             >
-              👋 Selamat datang di portfolio saya
+               🙌 Bonjour mon ami 
             </motion.span>
           </motion.div>
 
@@ -38,9 +53,9 @@ export default function HeroSection() {
             transition={{ duration: 0.8, delay: 0.3 }}
             className="font-display text-4xl md:text-6xl lg:text-7xl font-bold mb-6"
           >
-            Fullstack Developer
+            Selamat Datang di Portofolio Digital Saskia
             <br />
-            <span className="text-gradient">&amp; Content Creator</span>
+            <span className="text-gradient"></span>
           </motion.h1>
 
           <motion.p
@@ -49,8 +64,7 @@ export default function HeroSection() {
             transition={{ duration: 0.8, delay: 0.5 }}
             className="text-lg md:text-xl text-muted-foreground mb-8 max-w-2xl mx-auto"
           >
-            Saya membangun aplikasi web yang indah dan fungsional, 
-            serta membagikan pengetahuan melalui konten yang inspiratif.
+            Mendedikasikan kreativitas untuk merancang antarmuka web yang presisi dan membagikan inspirasi melalui narasi digital
           </motion.p>
 
           <motion.div

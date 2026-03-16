@@ -1,12 +1,12 @@
 import { motion } from 'framer-motion';
-import { Code2, Video, Coffee, Rocket } from 'lucide-react';
+import { BookOpen, Medal, PenLine, Rocket } from 'lucide-react';
 
 export default function AboutSection() {
   const stats = [
-    { icon: Code2, value: '50+', label: 'Projects Selesai' },
-    { icon: Video, value: '100+', label: 'Video Konten' },
-    { icon: Coffee, value: '1000+', label: 'Cangkir Kopi' },
-    { icon: Rocket, value: '5+', label: 'Tahun Pengalaman' },
+    { icon: BookOpen, value: '99+', label: 'tugas Selesai' },
+    { icon: Medal, value: '3+', label: 'Prestasi Akademik' },
+    { icon: PenLine, value: '70+', label: 'Guratan tinta' },
+    { icon: Rocket, value: '9+', label: 'Rekam jejak akademik' },
   ];
 
   return (
@@ -36,12 +36,12 @@ export default function AboutSection() {
             <div className="relative">
               <div className="aspect-square rounded-2xl overflow-hidden glass shadow-card">
                 <div className="w-full h-full bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center">
-                  <span className="text-8xl">👨‍💻</span>
+                  <span className="text-8xl">👩‍💻</span>
                 </div>
               </div>
               <div className="absolute -bottom-6 -right-6 p-4 glass rounded-xl shadow-card">
-                <p className="font-display font-bold text-2xl text-gradient">5+ Tahun</p>
-                <p className="text-sm text-muted-foreground">Pengalaman</p>
+                <p className="font-display font-bold text-2xl text-gradient">9+ Tahun</p>
+                <p className="text-sm text-muted-foreground">Rekam jejak akademik</p>
               </div>
             </div>
           </motion.div>
@@ -54,18 +54,13 @@ export default function AboutSection() {
             className="space-y-6"
           >
             <h3 className="font-display text-2xl md:text-3xl font-bold">
-              Passionate Developer &amp; Creator
+              Profil Singkat
             </h3>
             <p className="text-muted-foreground leading-relaxed">
-              Saya adalah seorang Fullstack Web Developer dengan passion yang kuat dalam menciptakan 
-              solusi digital yang inovatif. Dengan pengalaman lebih dari 5 tahun, saya telah 
-              membantu berbagai klien dan perusahaan dalam mewujudkan ide-ide mereka menjadi 
-              aplikasi web yang powerful dan user-friendly.
+              Perkenalkan,Saya Saskia Burmaynisa, lahir di Aceh Besar pada 4 Juli dan kini berdomisili di Neusu. Saat ini, saya sedang menempuh pendidikan di MAN 1 Banda Aceh.
             </p>
             <p className="text-muted-foreground leading-relaxed">
-              Selain coding, saya juga aktif sebagai Content Creator, berbagi pengetahuan 
-              tentang pemrograman dan teknologi melalui berbagai platform. Saya percaya bahwa 
-              berbagi ilmu adalah cara terbaik untuk terus belajar dan berkembang.
+              Saya adalah pribadi yang menghargai keseimbangan. Tidak ambisius secara berlebihan, namun saya selalu memastikan setiap tanggung jawab dari guru tuntas sebelum menikmati waktu luang. Bagi saya, ketenangan datang dari tugas yang sudah selesai. Pembawaan saya mungkin terlihat santai, namun saya memiliki kesiapan menghadapi setiap tantangan yang ada.
             </p>
             <div className="grid grid-cols-2 gap-4 pt-4">
               {stats.map((stat, index) => (
