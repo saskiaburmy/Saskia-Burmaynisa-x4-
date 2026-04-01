@@ -7,37 +7,41 @@ import ProjectsSection from '@/components/ProjectsSection';
 import CertificatesSection from '@/components/CertificatesSection';
 import ContactSection from '@/components/ContactSection';
 import Footer from '@/components/Footer';
+import LoadingScreen from '@/components/LoadingScreen';
 
 const Index = () => {
-  const [isDark, setIsDark] = useState(() => {
-    if (typeof window !== 'undefined') {
-      const saved = localStorage.getItem('theme');
-      return saved === 'dark' || (!saved && window.matchMedia('(prefers-color-scheme: dark)').matches);
-    }
-    return false;
-  });
+  // 1. Ini sistem buat ngatur loading-nya (true artinya loading jalan)
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    if (isDark) {
-      document.documentElement.classList.add('dark');
-      localStorage.setItem('theme', 'dark');
-    } else {
-      document.documentElement.classList.remove('dark');
-      localStorage.setItem('theme', 'light');
-    }
-  }, [isDark]);
+    // Kunci warna latar belakang biar nggak jadi putih
+    document.body.style.backgroundColor = "#C28291";
+    
+    // 2. Timer: Loading bakal muncul selama 2.5 detik
+    const timer = setTimeout(() => {
+      setLoading(false); // Setelah 2.5 detik, loading dimatikan
+    }, 2500);
 
-  const toggleTheme = () => setIsDark(!isDark);
+    return () => clearTimeout(timer);
+  }, []);
 
+  // 3. Kalau statusnya 'loading', tampilin si mata (LoadingScreen)
+  if (loading) {
+    return <LoadingScreen />;
+  }
+
+  // 4. Kalau loading selesai, baru tampilin semua isi portfolio
   return (
-    <div className="min-h-screen bg-background text-foreground">
-      <Navbar isDark={isDark} toggleTheme={toggleTheme} />
-      <HeroSection />
-      <AboutSection />
-      <SkillsSection />
-      <ProjectsSection />
-      <CertificatesSection />
-      <ContactSection />
+    <div className="min-h-screen" style={{ backgroundColor: '#C28291' }}>
+      <Navbar isDark={false} toggleTheme={() => {}} />
+      <main>
+        <HeroSection />
+        <AboutSection />
+        <SkillsSection />
+        <ProjectsSection />
+        <CertificatesSection />
+        <ContactSection />
+      </main>
       <Footer />
     </div>
   );
